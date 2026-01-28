@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import NavItems from "./NavItems";
 import UserDropdown from "./UserDropdown";
