@@ -1,3 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type {
+  Control,
+  FieldError,
+  UseFormRegister,
+  RegisterOptions,
+} from "react-hook-form";
+
 declare global {
   type SignInFormData = {
     email: string;
@@ -17,7 +25,7 @@ declare global {
   type CountrySelectProps = {
     name: string;
     label: string;
-    control: Control;
+    control: Control<any>;
     error?: FieldError;
     required?: boolean;
   };
@@ -27,7 +35,7 @@ declare global {
     label: string;
     placeholder: string;
     type?: string;
-    register: UseFormRegister;
+    register: UseFormRegister<any>;
     error?: FieldError;
     validation?: RegisterOptions;
     disabled?: boolean;
@@ -44,7 +52,7 @@ declare global {
     label: string;
     placeholder: string;
     options: readonly Option[];
-    control: Control;
+    control: Control<any>;
     error?: FieldError;
     required?: boolean;
   };

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="auth-layout">
       <section className="auth-left-section scrollbar-hide-default">
@@ -57,4 +57,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;

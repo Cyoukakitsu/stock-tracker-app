@@ -1,7 +1,14 @@
 "use client";
 
+import CountrySelectField from "@/components/forms/CountrySelectField";
 import InputField from "@/components/forms/InputField";
+import SelectFiled from "@/components/forms/SelectFiled";
 import { Button } from "@/components/ui/button";
+import {
+  INVESTMENT_GOALS,
+  PREFERRED_INDUSTRIES,
+  RISK_TOLERANCE_OPTIONS,
+} from "@/lib/constants";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
@@ -22,9 +29,8 @@ const SignUp = () => {
     },
     mode: "onBlur",
   });
-  const onSubmit = async (data: SignInFormData) => {
-    try {
-    } catch (error) {}
+  const onSubmit = async (_data: SignUpFormData) => {
+    // TODO: Implement form submission
   };
 
   return (
@@ -41,6 +47,65 @@ const SignUp = () => {
             required: "Full name is required",
             minLength: 2,
           }}
+        />
+        <InputField
+          name="email"
+          label="Email"
+          placeholder="contact@gamil.com"
+          register={register}
+          error={errors.email}
+          validation={{
+            required: "Email is required",
+            pattern: {
+              value: /^\w+@\w+\.\w+$/,
+              message: "Please enter a valid email address",
+            },
+          }}
+        />
+        <InputField
+          name="password"
+          label="Password"
+          placeholder="Enter a strong password"
+          type="password"
+          register={register}
+          error={errors.password}
+          validation={{ required: "Password is required", minLength: 8 }}
+        />
+
+        <CountrySelectField
+          name="country"
+          label="Country"
+          control={control}
+          error={errors.country}
+          required
+        />
+
+        <SelectFiled
+          name="investmentGoals"
+          label="Investment Goals"
+          placeholder="Select your investment goals"
+          options={INVESTMENT_GOALS}
+          control={control}
+          error={errors.investmentGoals}
+          required
+        />
+        <SelectFiled
+          name="riskTolerance"
+          label="Risk Tolerance"
+          placeholder="Select your risk level"
+          options={RISK_TOLERANCE_OPTIONS}
+          control={control}
+          error={errors.riskTolerance}
+          required
+        />
+        <SelectFiled
+          name="preferredIndustry"
+          label="Preferred Industry"
+          placeholder="Select your preferred industry"
+          options={PREFERRED_INDUSTRIES}
+          control={control}
+          error={errors.preferredIndustry}
+          required
         />
 
         <Button
