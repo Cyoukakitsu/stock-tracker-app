@@ -4,7 +4,7 @@ import CountrySelectField from "@/components/forms/CountrySelectField";
 import InputField from "@/components/forms/InputField";
 import SelectFiled from "@/components/forms/SelectFiled";
 import { Button } from "@/components/ui/button";
-import { signUpWithEmail } from "@/lib/actions/auth.acitions";
+import { signUpWithEmail } from "@/lib/actions/auth.actions";
 import {
   INVESTMENT_GOALS,
   PREFERRED_INDUSTRIES,
