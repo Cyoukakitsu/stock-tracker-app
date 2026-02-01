@@ -30,7 +30,7 @@ import NavItems from "./NavItems";
  * UserDropdown 组件
  * 用户下拉菜单组件，显示用户头像和信息，提供登出等操作
  */
-const UserDropdown = () => {
+const UserDropdown = ({ user }: { user: User }) => {
   // 获取路由实例，用于页面跳转(控制路由跳转的工具)
   const router = useRouter();
 
@@ -42,9 +42,6 @@ const UserDropdown = () => {
     //直接跳转到 /signout 这个路径（创建一个signout.tsx）
     router.push("/signout");
   };
-
-  // 模拟用户数据（实际应用中应从认证状态获取）
-  const user = { name: "John Doe", email: "john@example.com" };
 
   return (
     // ==================== 下拉菜单容器 ====================
